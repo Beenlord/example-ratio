@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    width: 100%;
+    height: 100vh;
+}
+.card {
+    padding: 8px;
+    border: 1px solid #efefef;
+}
+.card__cover {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    background: #efefef;
+}
+/* Можешь сделать так:
+.card__cover img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    object-fit: contain;
+} */
+/* А можешь вот так: */
+.card__cover img:first-child {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    object-fit: cover;
+    filter: blur(5px);
+}
+.card__cover img:last-child {
+    width: 90%;
+    max-width: 90%;
+    height: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+.card__short {
+    padding: 8px 0 16px;
+    text-align: justify;
+}
+.card__buy-btn {
+    width: 100%;
+    height: 32px;
+}
+.dashboard {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-gap: 16px;
+}
+.dashboard__card {
+    flex-grow: 1;
+    max-width: 33.3%;
+}
